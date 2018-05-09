@@ -1,0 +1,22 @@
+<div>
+  <form>
+  	<input type="text" name="name" [(ngModel)]="name1">
+  	<input type="text" name="number" [(ngModel)]="number1">
+	<button (click)="addZoo()">Add</button>
+  </form>
+  <ul>
+  	<li *ngFor = "let zoo of zooList, let i=index">
+	  		<p>Positon: {{zoo.position}}</p>
+	  		<p>Size: {{zoo.size}}</p>
+	  		<button (click)="flagFlip()">update</button>
+	  			<div >
+			 		<input type="text" name="name" [hidden]="flag" [(ngModel)]="zoo.position">
+			 		<input type="text" name="number" [hidden]="flag" [(ngModel)]="zoo.size">
+			 	</div>
+	  		<button (click)="selectZoo(zoo)">detail</button>
+	  		<button (click)="deleteZoo(i)">delete</button>
+	  		
+	</li>	
+  </ul>
+	<button (click)="goBack()">Back</button>
+</div>
